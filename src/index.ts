@@ -20,7 +20,6 @@ export function checkNumberPadding(intStrs: Iterable<string>): number {
     const numbers = strings.map(s => parseInt(s, 10));
     const lengths = strings.map(s => s.length);
     const minLength = Math.min(...lengths);
-    const maxLength = Math.max(...lengths);
 
     // Find leading zeros for each string
     const leadingZeros = strings.map(s => {
@@ -35,7 +34,6 @@ export function checkNumberPadding(intStrs: Iterable<string>): number {
     // Group strings by their value length (without leading zeros)
     const valueLengths = numbers.map(n => n.toString().length);
     const minValueLength = Math.min(...valueLengths);
-    const maxValueLength = Math.max(...valueLengths);
 
     // Get the shortest numbers (by value length)
     const shortNumbers = strings.filter((_, i) => valueLengths[i] === minValueLength);
